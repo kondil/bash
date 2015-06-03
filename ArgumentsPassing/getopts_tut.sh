@@ -13,12 +13,12 @@ DEBUG=0                                                               # DEBUG CO
                                                                       # DEBUG CODE
 help_usage() {
 	if [ $DEBUG == 2 ]; then echo "=== Entering help_usage()"; fi	# DEBUG CODE
-	echo -e "This is the usage help"
+	echo -e "This is the usage help ::\n\n-h\tHelp Usage."
 	if [ $DEBUG == 2 ]; then echo "=== Exiting help_usage()"; fi	# DEBUG CODE
 }
 
-get_input_args() {
- 	if [ $DEBUG == 2 ]; then echo "== Entering get_input_args()"; fi    # DEBUG CODE
+getInputArgs() {
+ 	if [ $DEBUG == 2 ]; then echo "== Entering getInputArgs()"; fi    # DEBUG CODE
 	while getopts ":a:b:c:d:e:f:g:hi:j:k:l:m:n:o:p:q:r:s:t:u:v:w:x:y:z:A:B:C:D:E:F:G:H:I:J:K:L:M:N:O:P:Q:R:S:T:U:V:W:X:Y:Z:" opt; do
 		case $opt in
 		a)
@@ -187,14 +187,14 @@ get_input_args() {
 			;;
 		esac
 	done
-	if [ $DEBUG == 2 ]; then echo "== Exiting get_input_args()"; fi    # DEBUG CODE
+	if [ $DEBUG == 2 ]; then echo "== Exiting getInputArgs()"; fi    # DEBUG CODE
 }
 
 
 main() {
 	if [ $DEBUG == 2 ]; then echo "= Entering main()"; fi    # DEBUG CODE
 
-	get_input_args $@
+	getInputArgs $@
 
 	if [ $DEBUG == 2 ]; then echo "= Exiting main()"; fi    # DEBUG CODE
 }
